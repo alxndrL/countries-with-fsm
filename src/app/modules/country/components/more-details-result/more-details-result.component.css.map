@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,WAAY;EACV,WAAW,EAAE,IAAI",
+"sources": ["more-details-result.component.scss"],
+"names": [],
+"file": "more-details-result.component.css"
+}

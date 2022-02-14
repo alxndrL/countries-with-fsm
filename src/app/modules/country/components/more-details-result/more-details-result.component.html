@@ -1,0 +1,11 @@
+<h1>More Details Result</h1>
+<p>Country: {{ countryName }}</p>
+<p>Capital: {{ capital }}</p>
+<p *ngIf="currency">Currency: {{ currency }}</p>
+<p *ngIf="population">Population:</p>
+<div class="population">
+    <ng-container *ngFor="let populationData of population">
+        <p>{{populationData.year}}: {{populationData.value}}</p>
+    </ng-container>
+</div>
+<button mat-stroked-button color="primary" (click)="onReset()">Reset</button>
