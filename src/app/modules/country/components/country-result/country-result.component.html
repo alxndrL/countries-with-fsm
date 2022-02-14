@@ -1,0 +1,20 @@
+<h1>Country Result</h1>
+<h3>Country: {{ countryName }}</h3>
+<h3>Capital: {{ capital }}</h3>
+
+<div class="checkbox-section" [formGroup]="form">
+    <h3>Select additional details:</h3>
+    <div>
+        <mat-checkbox color="primary" formControlName="currency">Currency</mat-checkbox>
+    </div>
+    <div>
+        <mat-checkbox color="primary" formControlName="population">Population</mat-checkbox>
+    </div>
+</div>
+
+<div class="buttons">
+    <button mat-stroked-button color="primary" (click)="onBack()">Back</button>
+    <button mat-stroked-button color="primary" [disabled]="!isDetailsSelected()"
+            (click)="onMoreDetails()">Get More Details
+    </button>
+</div>

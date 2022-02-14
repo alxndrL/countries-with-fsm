@@ -1,0 +1,22 @@
+:host #country-app {
+  border: rgba(0, 0, 0, 0.12) solid 1px;
+  border-radius: 8px;
+  width: 300px;
+  height: 350px;
+  padding: 70px;
+  overflow: auto;
+  box-shadow: 3px 3px 15px #8080806b;
+  margin: 50px auto; }
+:host button {
+  position: absolute;
+  top: 5px;
+  left: 5px; }
+:host img {
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  left: 0; }
+:host .spinner {
+  display: flex; }
+
+/*# sourceMappingURL=country-main.component.css.map */

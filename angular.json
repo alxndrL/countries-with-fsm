@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "capital-of-country": {
+    "countries": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/capital-of-country",
+            "outputPath": "dist/countries",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -68,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "capital-of-country:build:production"
+              "browserTarget": "countries:build:production"
             },
             "development": {
-              "browserTarget": "capital-of-country:build:development"
+              "browserTarget": "countries:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "capital-of-country:build"
+            "browserTarget": "countries:build"
           }
         },
         "test": {
@@ -94,7 +95,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -102,5 +104,8 @@
       }
     }
   },
-  "defaultProject": "capital-of-country"
+  "defaultProject": "countries",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

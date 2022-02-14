@@ -1,0 +1,43 @@
+<div id="country-app">
+    <ng-container [ngSwitch]="currentFsmStateName">
+        <ng-template ngSwitchCase="idle">
+            <app-search-country (searchButtonClicked)="sendFsmEvent($event)"></app-search-country>
+        </ng-template>
+
+        <ng-template ngSwitchCase="fetchingCountry">
+            <h1 id="fetching-country-loading">Loading...</h1>
+        </ng-template>
+
+        <ng-template ngSwitchCase="fetchingMoreDetails">
+            <h1 id="fetching-more-details">Loading...</h1>
+        </ng-template>
+
+        <ng-template ngSwitchCase="successFetchCountry">
+            <app-country-result [countryName]="(countryState$ | async)?.name"
+                                [capital]="(countryState$ | async)?.capital"
+                                (buttonClicked)="sendFsmEvent($event)"
+            ></app-country-result>
+        </ng-template>
+
+        <ng-template ngSwitchCase="successFetchMoreDetails">
+            <app-more-details-result [countryName]="(countryState$ | async)?.name"
+                                     [capital]="(countryState$ | async)?.capital"
+                                     [population]="(countryState$ | async)?.population"
+                                     [currency]="(countryState$ | async)?.currency"
+                                     (resetButtonClicked)="sendFsmEvent($event)"
+            ></app-more-details-result>
+        </ng-template>
+
+        <ng-template ngSwitchCase="failure">
+            <app-error [errorMessage]="(countryState$ | async)?.error"
+                       (tryAgainButtonClicked)="sendFsmEvent($event)"
+            ></app-error>
+        </ng-template>
+    </ng-container>
+
+    <img id="diagram" *ngIf="showDiagram" src="../../../assets/images/fsm_diagram.png" alt="diagram">
+    <button *ngIf="!showDiagram" mat-button color="primary" (click)="showDiagram = !showDiagram">Show Diagram
+    </button>
+    <button *ngIf="showDiagram" mat-button color="primary" (click)="showDiagram = !showDiagram">Hide Diagram
+    </button>
+</div>

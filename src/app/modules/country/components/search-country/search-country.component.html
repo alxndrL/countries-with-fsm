@@ -1,0 +1,12 @@
+<form class="example-form" (ngSubmit)="submit()">
+    <h1>Search Country</h1>
+
+    <div>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Country</mat-label>
+            <input matInput [formControl]="capitalControl" placeholder="Ex. Israel">
+        </mat-form-field>
+    </div>
+
+    <button mat-stroked-button color="primary">Search</button>
+</form>
