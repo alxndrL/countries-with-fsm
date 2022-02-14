@@ -10,6 +10,7 @@ import { CountryModule } from "./modules/country/country.module";
 import { StoreModule } from '@ngrx/store';
 import { metaReducers, reducers } from "./reducers";
 import { EffectsModule } from '@ngrx/effects';
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
 	declarations: [
@@ -28,7 +29,8 @@ import { EffectsModule } from '@ngrx/effects';
 
 		}),
 		StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-		EffectsModule.forRoot([])
+		EffectsModule.forRoot([]),
+		MatButtonModule
 	],
 	providers: [
 		CountryService
