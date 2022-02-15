@@ -127,12 +127,10 @@ export class CountryMainComponent implements OnInit {
 				},
 				successFetchMoreDetails: {
 					on: {
-						RESET: 'idle',
-						BACK: 'successFetchCountry'
+						RESET: 'idle'
 					},
 					invoke: (payload: string) => this.store.dispatch(
 						countryActions.FETCH_MORE_DETAILS_SUCCESS({ payload: payload }))
-
 				},
 				failure: {
 					on: {
